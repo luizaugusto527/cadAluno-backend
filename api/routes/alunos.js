@@ -30,6 +30,8 @@ const { db, ObjectId } = await connectToDatabase()
 
     check('cpf', 'O cpf deve ser um número').isNumeric(),
     check('curso').optional({nullable: true}),
+    check('idade').not().isEmpty().withMessage("A idade não pode ser vazia")
+    .isNumeric().withMessage("A idade deve ser um número"),
     check('data_matricula')
     .optional({nullable: true})
     .isDate({format: 'YYYY-MM-DD'})
