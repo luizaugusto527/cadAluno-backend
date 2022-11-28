@@ -1,0 +1,13 @@
+use('Alunos')
+db.alunos.insertOne({
+    "nome":"45150718000142",
+    "cpf":"40359925855",
+    "idade": 18,
+    "curso": "Direito",
+    "data_matricula": "2020-08-01"
+})
+
+db.alunos.createIndex({'cpf':1}, {unique: true})
+
+use('Alunos')
+db.alunos.find({},{})
